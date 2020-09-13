@@ -6,8 +6,8 @@ homepage: https://github.com/ArnoWang1/flutter_rpt
 repository: https://github.com/ArnoWang1/flutter_rpt
 
 environment:
-  sdk: ">=2.6.0"
-  flutter: ">=1.0.0"
+  sdk: ">=2.6.0 <3.0.0"
+  flutter: ">=1.0.0 <2.0.0"
 
 dependencies:
   flutter:
