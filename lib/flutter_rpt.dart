@@ -13,10 +13,13 @@ import 'dart:ui';
 ///
 class ResponsiveUnit {
   //screen width
-  static double _screenWidth;
+  static double screenWidth;
 
   //screen height
-  static double _screenHeight;
+  static double screenHeight;
+
+  //status bar height
+  static double statusBarHeight;
 
   //device responsive point
   static double _rpt;
@@ -33,12 +36,15 @@ class ResponsiveUnit {
     //device dpr
     final _dpr = window.devicePixelRatio;
 
+    //status bar height
+    statusBarHeight = window.padding.top / _dpr;
+
     //device screen size
-    _screenWidth = _physicalWidth / _dpr;
-    _screenHeight = _physicalHeight / _dpr;
+    screenWidth = _physicalWidth / _dpr;
+    screenHeight = _physicalHeight / _dpr;
 
     //device responsive point
-    _rpt = _screenWidth / standardPt;
+    _rpt = screenWidth / standardPt;
   }
 }
 
@@ -58,9 +64,9 @@ extension IntFit on int {
   ///
   double get vw {
     if (this > 100) {
-      return ResponsiveUnit._screenWidth;
+      return ResponsiveUnit.screenWidth;
     }
-    return ResponsiveUnit._screenWidth / 100 * this;
+    return ResponsiveUnit.screenWidth / 100 * this;
   }
 
   ///
@@ -68,9 +74,9 @@ extension IntFit on int {
   ///
   double get vh {
     if (this > 100) {
-      return ResponsiveUnit._screenHeight;
+      return ResponsiveUnit.screenHeight;
     }
-    return ResponsiveUnit._screenHeight / 100 * this;
+    return ResponsiveUnit.screenHeight / 100 * this;
   }
 }
 
@@ -90,9 +96,9 @@ extension DoubleFit on double {
   ///
   double get vw {
     if (this > 100) {
-      return ResponsiveUnit._screenWidth;
+      return ResponsiveUnit.screenWidth;
     }
-    return ResponsiveUnit._screenWidth / 100 * this;
+    return ResponsiveUnit.screenWidth / 100 * this;
   }
 
   ///
@@ -100,8 +106,8 @@ extension DoubleFit on double {
   ///
   double get vh {
     if (this > 100) {
-      return ResponsiveUnit._screenHeight;
+      return ResponsiveUnit.screenHeight;
     }
-    return ResponsiveUnit._screenHeight / 100 * this;
+    return ResponsiveUnit.screenHeight / 100 * this;
   }
 }

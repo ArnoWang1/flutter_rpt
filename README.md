@@ -7,6 +7,7 @@ A Flutter package provide responsive layout unit, depend on device width calcula
 ##### At first
 Use in flutter, we should init in main.dart, like this:
 ```dart
+import 'package:flutter_rpt/flutter_rpt.dart';
 void main() {
     ResponsiveUnit.init();
 	// or designer use width is not 375,
@@ -20,6 +21,7 @@ void main() {
 This unit is responsive pt unit, generally our ui designer use 375pt, this unit will transfer pt to px, such as 375pt will be 750px on 750px width device.
 Use in flutter like this:
 ```dart
+import 'package:flutter_rpt/flutter_rpt.dart';
 Container(
     color: Colors.red,
     width: 100.rpt,
@@ -31,6 +33,7 @@ Container(
 This unit like css width 100%, percentage device width.
 Use in flutter like this:
 ```dart
+import 'package:flutter_rpt/flutter_rpt.dart';
 Container(
     color: Colors.red,
     width: 100.vw,
@@ -42,9 +45,31 @@ Container(
 This unit like css height 100%, percentage device height.
 Use in flutter like this:
 ```dart
+import 'package:flutter_rpt/flutter_rpt.dart';
 Container(
     color: Colors.red,
     width: 100.rpt,
     height: 100.vh,
 )
+```
+
+4. screen width
+Use in flutter like this:
+```dart
+import 'package:flutter_rpt/flutter_rpt.dart';
+ResponsiveUnit.screenWidth
+```
+
+5. screen height
+Use in flutter like this:
+```dart
+import 'package:flutter_rpt/flutter_rpt.dart';
+ResponsiveUnit.screenHeight
+```
+
+6. status bar height
+Use in flutter like this:
+```dart
+import 'package:flutter_rpt/flutter_rpt.dart';
+ResponsiveUnit.statusBarHeight
 ```

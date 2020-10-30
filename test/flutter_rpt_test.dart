@@ -7,5 +7,8 @@ void main() {
     print(375.rpt);
     print(375.vw);
     print(375.vh);
+    print(ResponsiveUnit.screenWidth);
+    print(ResponsiveUnit.screenHeight);
+    print(ResponsiveUnit.statusBarHeight);
   });
 }
